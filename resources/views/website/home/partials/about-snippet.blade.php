@@ -1,5 +1,5 @@
-<section data-theme="dark" class="container">
-    <section class="mt-2 text-white bg-brand-black rounded-3xl px-6 md:px-12 py-10 relative overflow-hidden">
+<section data-theme="dark" class="bg-brand-black">
+    <section class="text-white container rounded-3xl px-6 md:px-12 py-20 relative overflow-hidden">
         <!-- Abstract Design Elements -->
         <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 blur-[120px] rounded-full pointer-events-none"></div>
         <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-white/5 blur-[100px] rounded-full pointer-events-none"></div>

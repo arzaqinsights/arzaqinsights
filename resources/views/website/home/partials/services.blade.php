@@ -44,67 +44,60 @@ $services = [
 ],
 ];
 @endphp
-<section data-theme="light" class="mt-10 py-10 p-2 container text-brand-black rounded-3xl relative overflow-hidden">
+<section class="py-20 container text-brand-black">
 
-    <div class="relative z-20">
+    <!-- Heading -->
+    <div class="mb-20 max-w-3xl">
+        <span class="text-brand-black/50 uppercase tracking-[0.2em] text-sm font-semibold mb-4 block">
+            What we do
+        </span>
 
-        <!-- Heading -->
-        <div class="mb-16">
-            <span class="text-brand-black/50 uppercase tracking-[0.2em] text-sm font-semibold mb-4 block">What we do</span>
-            <h2 class="text-5xl md:text-7xl font-extrabold tracking-tight">
-                Services <span class="text-brand-black/40">we offer.</span>
-            </h2>
-            <p class="text-brand-black/80 mt-4 max-w-xl">
-                Powerful digital solutions designed to scale your business with speed, intelligence, and precision.
+        <h2 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight">
+            Services <span class="text-brand-black/40">we offer.</span>
+        </h2>
+
+        <p class="text-brand-black/70 mt-6 text-lg leading-relaxed">
+            We craft powerful digital solutions that help businesses grow faster, operate smarter, and stand out in a competitive world.
+        </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        @foreach($services as $service)
+        <a href="{{ $service['url'] }}"
+            class="group relative p-8 rounded-sm transition duration-500 bg-brand-black/10">
+
+            <!-- Icon -->
+            <div class="mb-6 text-2xl text-brand-black">
+                <i class="fas {{ $service['icon'] }}"></i>
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-2xl font-bold mb-4 text-brand-black transition-all duration-300">
+                {{ $service['label'] }}
+            </h3>
+
+            <!-- Description -->
+            <p class="text-brand-black/70 leading-relaxed text-sm mb-6">
+                {{ $service['desc'] }}
             </p>
-        </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-theme="dark">
+            <!-- Extra filler text (premium feel ke liye) -->
+            <p class="text-brand-black/50 text-sm leading-relaxed">
+                We deliver scalable, high-performance solutions tailored to your business goals, ensuring long-term growth and digital success.
+            </p>
 
-            @foreach($services as $service)
-            <a href="{{ $service['url'] }}"
-                class="group relative rounded-3xl overflow-hidden aspect-square block">
+            <!-- CTA -->
+            <div class="mt-8 flex items-center gap-2 text-sm font-semibold text-brand-black">
+                Explore
+                <span class="transform transition-all duration-300">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+            </div>
 
-                <!-- Background Image -->
-                <img src="{{ asset($service['img'] ?? null) }}"
-                    class="absolute inset-0 w-full h-full object-cover 
-                group-hover:scale-110 transition duration-500">
-
-                <!-- Dark Gradient Overlay -->
-                <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent z-10"></div>
-
-                <!-- Content -->
-                <div class="absolute inset-0 z-20 flex flex-col justify-end p-6">
-
-                    <div class="flex items-center gap-3 mb-3">
-                        <!-- Icon -->
-                        <div class="text-lg text-white">
-                            <i class="fas {{ $service['icon'] }}"></i>
-                        </div>
-
-                        <!-- Title -->
-                        <h3 class="text-xl font-semibold text-white">
-                            {{ $service['label'] }}
-                        </h3>
-                    </div>
-
-                    <!-- Description -->
-                    <p class="text-white/70 text-sm leading-relaxed line-clamp-2">
-                        {{ $service['desc'] }}
-                    </p>
-
-                    <!-- CTA -->
-                    <div class=" relative w-40 mt-4 text-brand-white font-semibold rounded-full group/btn">
-                        Explore
-                        <i class="fa-solid fa-arrow-right ml-2"></i>
-                    </div>
-
-                </div>
-
-            </a>
-            @endforeach
-
-        </div>
+        </a>
+        @endforeach
 
     </div>
 

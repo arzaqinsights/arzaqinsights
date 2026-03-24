@@ -3,7 +3,7 @@
         
         <!-- Brand -->
         <div class="flex flex-col gap-6">
-            <img src="{{ asset('images/logo.png') }}" alt="Arzaq Insights" class="h-14 mb-4 w-auto object-contain self-start invert">
+            <img src="{{ asset('images/logo.png') }}" alt="Arzaq Insights" class="h-10 mb-4 w-auto object-contain self-start invert">
             <p class="text-white/60 text-sm leading-relaxed">
                 Elevating businesses with premium web design, scalable software, and intelligent AI automation. We build the future.
             </p>

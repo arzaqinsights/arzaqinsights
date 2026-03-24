@@ -23,9 +23,9 @@
 
 
     <!-- Navigation -->
-    <nav class="flex justify-between items-center py-3 container sticky top-0 z-50">
-        <img id="siteLogo" src="{{ asset('images/logo.png') }}" alt="Arzaq Insights" class="h-10 shrink-0 transition-all duration-300">
-        <div class="flex justify-between items-center gap-14 bg-brand-black/90 backdrop-blur-2xl rounded-full pl-2 lg:pl-12 pr-2 py-2">
+    <nav id="navbar" class="flex justify-between items-center py-3 container fixed top-0 left-0 w-full z-50 transition-all duration-500">
+        <img id="siteLogo" src="{{ asset('images/logo.png') }}" alt="Arzaq Insights" class="h-10 shrink-0 transition-all duration-300 invert">
+        <div class="flex justify-between items-center gap-14 rounded-full pl-2 lg:pl-12 pr-2 py-2">
             @php
             $navlinks = [
             [
@@ -103,7 +103,7 @@
                     @endif
                 </a>
                 @if($link['submenu'])
-                <div id="{{ $link['submenu_id'] }}" onmouseleave="toggleSubmenu('{{ $link['submenu_id'] }}');" class="submenu hidden absolute top-12 left-0 bg-brand-white backdrop-blur-md rounded-3xl p-6 w-96 space-y-6">
+                <div id="{{ $link['submenu_id'] }}" onmouseleave="toggleSubmenu('{{ $link['submenu_id'] }}');" class="submenu hidden absolute top-12 left-0 bg-brand-white backdrop-blur-md rounded-sm p-6 w-96 space-y-6">
                     @foreach ($link['submenu_links'] as $submenu_link)
                     <div>
                         <div class="link flex gap-4 items-start">
@@ -244,29 +244,21 @@
                 }, 300); // duration match karo
             }
         }
-        const logo = document.getElementById('siteLogo');
-        const sections = document.querySelectorAll('[data-theme]');
+        const navbar = document.getElementById("navbar");
 
-        function updateLogo() {
-            let currentTheme = 'light';
-
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-
-                if (rect.top <= 40 && rect.bottom >= 40) {
-                    currentTheme = section.dataset.theme;
-                }
-            });
-
-            if (currentTheme === 'dark') {
-                logo.classList.add('invert');
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add(
+                    "bg-brand-black/90",
+                    "shadow-lg"
+                );
             } else {
-                logo.classList.remove('invert');
+                navbar.classList.remove(
+                    "bg-brand-black/90",
+                    "shadow-lg"
+                );
             }
-        }
-
-        window.addEventListener('scroll', updateLogo);
-        window.addEventListener('load', updateLogo);
+        });
     </script>
 
 </body>
