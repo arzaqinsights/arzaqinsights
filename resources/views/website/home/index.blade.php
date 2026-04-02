@@ -5,5 +5,6 @@
     @include('website.home.partials.services')
     @include('website.home.partials.about-snippet')
     @include('website.home.partials.portfolio-snippet')
+    @include('website.home.partials.blogs-snippet')
     @include('website.home.partials.cta')
 @endsection

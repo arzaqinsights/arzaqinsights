@@ -24,7 +24,7 @@
 
     <!-- Navigation -->
     <nav id="navbar" class="flex justify-between items-center py-3 container fixed top-0 left-0 w-full z-50 transition-all duration-500">
-        <img id="siteLogo" src="{{ asset('images/logo.png') }}" alt="Arzaq Insights" class="h-10 shrink-0 transition-all duration-300 invert">
+        <img id="siteLogo" src="{{ asset('images/logo.svg') }}" alt="Arzaq Insights" class="h-10 w-48 object-cover shrink-0 transition-all duration-300">
         <div class="flex justify-between items-center gap-14 rounded-full pl-2 lg:pl-12 pr-2 py-2">
             @php
             $navlinks = [
@@ -249,12 +249,12 @@
         window.addEventListener("scroll", function() {
             if (window.scrollY > 50) {
                 navbar.classList.add(
-                    "bg-brand-black/90",
+                    "bg-brand-dark",
                     "shadow-lg"
                 );
             } else {
                 navbar.classList.remove(
-                    "bg-brand-black/90",
+                    "bg-brand-dark",
                     "shadow-lg"
                 );
             }

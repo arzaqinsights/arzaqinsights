@@ -1,5 +1,5 @@
 <section data-theme="dark" style="background-image: url('{{ asset('images/hero.jpg') }}'); background-size: cover; background-position: center;">
-    <div class="relative h-dvh container flex items-end justify-start p-6 md:p-12 overflow-hidden rounded-3xl">
+    <div class="relative h-dvh container flex items-end justify-start p-6 md:p-12">
 
         <!-- Dark Overlay -->
         <div class="absolute inset-0 bg-black/60 z-10"></div>

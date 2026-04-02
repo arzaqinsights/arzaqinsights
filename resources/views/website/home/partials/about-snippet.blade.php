@@ -25,7 +25,7 @@
             </div>
 
             <div class="relative">
-                <div class="pb-40 bg-white/5 rounded-3xl border border-white/10 overflow-hidden relative group">
+                <div class="pb-20 bg-white/5 rounded-3xl border border-white/10 overflow-hidden relative group">
                     <img src="{{ asset('images/services.jpg') }}" alt="Agency Office" class="w-full object-cover group-hover:scale-105 transition duration-700 opacity-80 mix-blend-luminosity">
                     <div class="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent"></div>
 
